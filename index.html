@@ -1,111 +1,85 @@
-
-
-
-
-
 <style type="text/css">
-	.box{
-		background-color: light-gray;
-		height: 20px;
-		padding: 2px;
-		margin-bottom: 5px;
-		
-	}
+a {
+  text-decoration: none;
+  color: #F0F0F0;
+  font-weight: bold;
+}
 
-	#deleteButton{
-		font-family: "Material Icons";
-		background-color: none;
-		float: right;
-		color: #4d4d4d;
-		font-size: 20px;
+body {
+  background: #DCF5FF;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Nunito', 'sans-serif';
+}
 
-		background: none;
-		border: none;
-		padding: 0;
-		outline: inherit;
-
-	}
-
-
-	body{
-		width: 200px;
-		margin: auto;
-		padding: 10px;
-	}
-
-	html{
-		font-family: "Open Sans";
-	}
-
-	input{
-		font-family: "Open Sans";
-	}
-
-	button{
-		font-family: "Open Sans";
-	}
-
-
-
+.inner {
+  background: #09c999;
+  padding: 1em;
+  border-radius: 10px;
+  width: 250px;
+  clip-path: circle(10% at 90% 20%);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+.inner:hover {
+  clip-path: circle(75%);
+  background: #00B6FF;
+}
+.inner h1 {
+  color: white;
+  font-weight: normal;
+  margin: 0;
+}
+.inner p {
+  color: white;
+  font-size: .8rem;
+}
+.inner span {
+  float: right;
+  color: white;
+  font-weight: bold;
+  transition: color .5s;
+  position: relative;
+  margin-right: 4%;
+}
+.inner:hover span {
+  color: rgba(255, 255, 255, 0);
+}
 </style>
 
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>MinimaList Web Port</title>
-	  <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Mono|Material+Icons|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Mono|Material+Icons|Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
+<center>
+<div class="container">
+        <div class="inner">
+            <span id="nav-toggle" >i</span>
+            <body>
+            <div class="header-container">
+              <div class="header-content">
+                <div class="header-title" >
+                      <h1><a href="projects.html">Hi,</a> I'm Dice</h1>
+                      <div class="header-subtitle">
+                      <p>&nbsp</p>
+                      <a class="typewrite">
+                      </a>
+                      </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</center>
 
-<input type="text" onsubmit="addNote();" placeholder="Type something..." id="myInput">
-<button type="button" onclick="addNote();">Set</button>
-<body></body>
+<script src="typed.js"></script>
+<script src="main.js"></script>
 
-<script type="">
-	var currentNote;
-	var currentNoteNum = 0;
-
-	document.getElementById("myInput").onkeypress = function(event){
-                if (event.keyCode == 13 || event.which == 13){
-			addNote();
-			document.getElementById("myInput").value = null;    
-		}
-           };
-
-
-
-	function addNote(){
-		if(document.getElementById("myInput").value != ""){
-
-			currentNoteNum++;
-			currentNote= document.getElementById("myInput").value;
-			console.log(currentNote);
-			var box = document.createElement("div");
-			box.innerHTML = currentNote;
-			box.id = "note" + currentNoteNum; 
-			box.className = "box";		
-			document.body.append(box);
-			
-			var btn = document.createElement("button");
-			btn.innerHTML = currentNote; 
-			btn.id = "deleteButton";
-			btn.innerHTML = "delete";
-			btn.setAttribute("onClick", "deleteNote(this.parentElement.id)");
-			box.appendChild(btn); 
-
-
-		}else{
-			console.log("NULL");
-		}
-		
-	}
-
-	function deleteNote(stg){
-	   	 var elem = document.getElementById(stg);
-   		 elem.parentElement.removeChild(elem);	
-	}
-
-	function deleteNote(stg){
-	   	 var elem = document.getElementById(stg);
-   		 elem.parentElement.removeChild(elem);	
-	}
-</script>
-
+</html>
