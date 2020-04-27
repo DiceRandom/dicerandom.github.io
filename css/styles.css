@@ -21,6 +21,7 @@ a {
 }
 
 
+
 a:hover {
   background-size: 100% 1px;
   color: #003348;
@@ -28,6 +29,7 @@ a:hover {
 
 
 body {
+  
   background: #003348;
   margin: 0;
   height: 100vh;
@@ -98,5 +100,11 @@ body {
   80%{color: DeepPink;}
   90%{color: DodgerBlue;}
   100%{color: orange;}
+}
+
+.toBull{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
