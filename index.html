@@ -14,9 +14,19 @@
 <body>
     <div class="center">
         <section class="padded-content">
-            <p>my name is dice, and i'm a freelance software engineer. when i have time, i <a href="https://www.twitch.tv/randice">stream</a>, and <a href="https://www.github.com/dicerandom">code</a>.</p>
+            <p>my name is dice, and i'm a <span id="age"> 17</span> year old freelance software engineer. when i have time, i <a href="https://www.twitch.tv/randice">stream</a>, and <a href="https://www.github.com/dicerandom">code</a>.</p>
         </section>
     </div>
 </body>
 
 </html>
+
+
+<script>
+    let ageElement = document.getElementById("age");
+
+    setInterval(() => {
+        let time = (new Date().getTime() - 1073606400000) / (1000 * 60 * 60 * 24 * 365.25); 
+        ageElement.innerText = time.toString().substring(0, 12);
+    }, 50);
+</script>
