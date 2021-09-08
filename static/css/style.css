@@ -11,7 +11,7 @@ body, html {
 
 
 
-.select {
+a {
 	font-weight: 600;
 	background: linear-gradient( to right, #dfc686 0%, #dfc686 100%);
 	background-position: 0 100%;
@@ -24,7 +24,7 @@ body, html {
 	transition: background-size .2s;
 }
 
-.select:hover {
+a:hover {
 	background-size: 100% 1px;
 	color: White;
 }
